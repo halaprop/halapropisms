@@ -359,5 +359,6 @@ function filteredHalaprops(search) {
     "We're putting the cart before the egg.",
     "Don't disrupt the apple cart"
   ];
-  return halaprops.filter(h => search ? h.includes(search) : h)
+  const lcSearch = search.toLowerCase();
+  return halaprops.filter(h => search ? h.toLowerCase().includes(lcSearch) : true)
 }
