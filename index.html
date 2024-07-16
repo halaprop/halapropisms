@@ -10,8 +10,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <style>
+
+    .disclosure-content.is-hidden {
+      display: none;
+    }
+
+    .rotate {
+      transform: rotate(-90deg);
+    }
+
+    .hero-body {
+      padding-bottom: 0.5rem;
+    }
+
+    .bottom-definition-p {
+      padding-bottom: 1.5rem;
+
+    }
+
     .dictionary-word {
-       color: aquamarine;
+      color: aquamarine;
     }
 
     .field {
@@ -21,7 +39,7 @@
     .control {
       position: relative;
     }
-    
+
     #clear-button {
       position: absolute;
       right: 10px;
@@ -45,7 +63,54 @@
 
   <section class="hero is-link">
     <div class="hero-body">
-      <p class="title">Halapropisms</p>
+
+
+      <div class="columns is-mobile">
+        <div class="column is-four-fifths">
+          <p class="title">Halapropisms</p>
+        </div>
+        <div class="column">
+
+          <span class="icon is-large disclosure-icon is-pulled-right">
+            <i class="fas fa-angle-down"></i>
+          </span>
+
+        </div>
+      </div>
+      <div class="disclosure-content">
+
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong class="dictionary-word">mal·a·prop·ism</strong> <small><em>/ˈmaləˌpräpˌizəm/</em></small><br>
+              </p>
+              <p>
+                The mistaken use of a word or phrase, often with amusing effect. The term originates
+                from the character Mrs. Malaprop in Richard Brinsley Sheridan’s 1775 play “The Rivals”
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong class="dictionary-word">hal·a·prop·ism</strong> <small><em>/ˈhaləˌpräpˌizəm/</em></small> <br>
+              </p>
+              <p class="bottom-definition-p">
+                A malapropism heard by or reported to Dan Halabe, uttered unintentionally, often in a business
+                consulting context.
+              </p>
+            </div>
+          </div>
+        </article>
+
+
+      </div>
+
+      <!-- <p class="title">Halapropisms</p>
       <p class="subtitle">
 
         <article class="media">
@@ -75,12 +140,12 @@
         </article>
 
 
-      </p>
+      </p> -->
     </div>
   </section>
 
   <nav class="panel">
-    <div class="panel-block">      
+    <div class="panel-block">
       <div class="field">
         <div class="control has-icons-right">
           <input id="search-input" class="input" placeholder="Search">
@@ -94,6 +159,14 @@
   </nav>
 
   <script type="module" defer>
+
+    const icon = document.querySelector('.disclosure-icon');
+    const content = document.querySelector('.disclosure-content');
+
+    icon.addEventListener('click', () => {
+      content.classList.toggle('is-hidden');
+      icon.querySelector('i').classList.toggle('rotate');
+    });
 
     function onInputChange(event) {
       const value = event.target.value;
@@ -453,4 +526,5 @@
 
   </script>
 </body>
+
 </html>
