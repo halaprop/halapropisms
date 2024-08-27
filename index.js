@@ -357,7 +357,8 @@ function filteredHalaprops(search) {
     "He doesn't hold a candlestick to them",
     "That's been a bane in our side",
     "We're putting the cart before the egg.",
-    "Don't disrupt the apple cart"
+    "Don't disrupt the apple cart",
+    "You're putting the horse before the buggy"
   ];
   const lcSearch = (search || '').toLowerCase();
   return halaprops.filter(h => search ? h.toLowerCase().includes(lcSearch) : true)
